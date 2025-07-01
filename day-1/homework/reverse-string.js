@@ -18,9 +18,20 @@
  *  c. how do you access individual characters of a String?
  *  d. how do you concatenate Strings? What operator do we use?
  */
+/*
+I: a string
+O: same string reversed
+C:
+E:
+*/
 
 function reverseString(input) {
   // YOUR CODE GOES BELOW HERE //
+  //make an array out of the split input string
+  let letters = input.split("");
+  //make an array of those letters using the reverse method
+  //join into a word
+  return letters.reverse().join("");
   
   // YOUR CODE GOES ABOVE HERE //
 }
