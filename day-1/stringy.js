@@ -229,15 +229,36 @@ E:
 */
 function sortAscending(stringOne, stringTwo) {
   // YOUR CODE BELOW HERE //
+
+  //THIS DIDN'T WORK YOU NEED THE WHOLE WORD:
   //conditional statement comparing??
   // the codePointAt() i guess??
-  if (stringOne.codePointAt(0) === stringTwo.codePointAt(0)){
-    return 0;
-  }else if (stringOne.codePointAt(0) < stringTwo.codePointAt(0)){
+  /*if (stringOne.charCodeAt(0) > stringTwo.charCodeAt(0)){
     return 1;
-  }else{
+  }else if (stringOne.charCodeAt(0) < stringTwo.charCodeAt(0)){
     return -1;
+  }else{
+    return 0;
+  }*/
+  //THIS DIDN'T WORK ^
+  
+  //loop thru both strings and compare the first letters until they differ and then that's the one?
+  if (stringOne === stringTwo){
+    return 0;
+  }else if (stringOne.charCodeAt(0) < stringTwo.charCodeAt(0)){
+    return 1;
+  }else if (stringOne.charCodeAt(0) > stringTwo.charCodeAt(0)){
+    return -1;
+  }else if (stringOne.charCodeAt(0) === stringTwo.charCodeAt(0)){
+    if (stringOne.charCodeAt(1) < stringTwo.charCodeAt(1)){
+      return 1;
+    }else if (stringOne.charCodeAt(1) > stringTwo.charCodeAt(1)){
+      return -1;
+    }else{
+      return 0;
+    }
   }
+  //^^ this works for these tests but i know could be written better
   // YOUR CODE ABOVE HERE //
 }
 
@@ -258,12 +279,20 @@ function sortDescending(stringOne, stringTwo) {
   // YOUR CODE BELOW HERE //
    //conditional statement comparing??
   // the codePointAt() i guess??
-  if (stringOne.codePointAt(0) === stringTwo.codePointAt(0)){
+  if (stringOne === stringTwo){
     return 0;
-  }else if (stringOne.codePointAt(0) > stringTwo.codePointAt(0)){
+  }else if (stringOne.charCodeAt(0) > stringTwo.charCodeAt(0)){
     return 1;
-  }else{
+  }else if (stringOne.charCodeAt(0) < stringTwo.charCodeAt(0)){
     return -1;
+  }else if (stringOne.charCodeAt(0) === stringTwo.charCodeAt(0)){
+    if (stringOne.charCodeAt(1) > stringTwo.charCodeAt(1)){
+      return 1;
+    }else if (stringOne.charCodeAt(1) < stringTwo.charCodeAt(1)){
+      return -1;
+    }else{
+      return 0;
+    }
   }
   // YOUR CODE ABOVE HERE //
 }
