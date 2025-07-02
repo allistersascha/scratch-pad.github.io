@@ -16,7 +16,7 @@
  */
 function isArray(value) {
   // YOUR CODE BELOW HERE //
-
+  return Array.isArray(value);
   // YOUR CODE ABOVE HERE //
 }
 
@@ -33,9 +33,10 @@ function isArray(value) {
  */
 function isObject(value) {
   // YOUR CODE BELOW HERE //
+    return Object.prototype.toString.call(value) === '[object Object]' && value !== null;
+  };
 
   // YOUR CODE ABOVE HERE //
-}
 
 /**
  * Given an input value, return true if is either an Array or an an Object
@@ -43,9 +44,12 @@ function isObject(value) {
  *
  * TIP: Similar to isObject, but we must return true if the value is an Array.
  */
+//I: value
+//O: boolean if it's a collectoin or not
 function isCollection(value) {
   // YOUR CODE BELOW HERE //
-
+  //bout to slap them two together lolololol
+  return Array.isArray(value) || Object.prototype.toString.call(value) === '[object Object]' && value !== null;
   // YOUR CODE ABOVE HERE //
 }
 
@@ -70,7 +74,7 @@ function isCollection(value) {
  */
 function typeOf(value) {
   // YOUR CODE BELOW HERE //
-  
+    return typeof value.toString();
   // YOUR CODE ABOVE HERE //
 }
 
