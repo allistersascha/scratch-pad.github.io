@@ -2,6 +2,8 @@
 
 'use strict';
 
+const { indexOf } = require("lodash");
+
 /**
  * 4: Contact List // Contacts
  *
@@ -35,19 +37,44 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-  
+  return {
+    id: id,
+    nameFirst: nameFirst,
+    nameLast: nameLast
+  }
 }
 
 function makeContactList() {
   /*
    * You need something here to hold contacts. See length api for a hint:
    */
-  var contacts = [];
+  var contacts = { };
 
   return {
     // we implemented the length api for you //
-
+    // create methods
+    length: function(){
+      return contacts.length;
+    },
+    //here on down is where my tests are failing
+    addContact: function(contact){
+      Object.fromEntries(contact);
+    },
+    findContact: function(fullName){
+      let nameSplit = fullName.split(" ");
+        for (keys in contacts){
+          if (contacts.firstName === (nameSplit[0] && contacts.includes(nameSplit[1])) === true){
+            return contacts[keys];
+          }else{
+          return undefined;
+          }
+        }
+      },
+      printAllContactNames: function(){
+        Object.entries.join(" ");
+      }
   };
+
 }
 
 // YOUR CODE GOES ABOVE HERE //
