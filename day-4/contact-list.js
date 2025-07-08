@@ -48,7 +48,7 @@ function makeContactList() {
   /*
    * You need something here to hold contacts. See length api for a hint:
    */
-  var contacts = { };
+  var contacts = [];
 
   return {
     // we implemented the length api for you //
@@ -58,20 +58,33 @@ function makeContactList() {
     },
     //here on down is where my tests are failing
     addContact: function(contact){
-      Object.fromEntries(contact);
+      contacts.push(contact);
     },
     findContact: function(fullName){
       let nameSplit = fullName.split(" ");
-        for (keys in contacts){
-          if (contacts.firstName === (nameSplit[0] && contacts.includes(nameSplit[1])) === true){
-            return contacts[keys];
-          }else{
-          return undefined;
+        for (var i = 0; i < contacts.length; contacts++){
+          if (contacts[i].nameFirst === nameSplit[0] && contacts[i].nameLast === (nameSplit[1])){
+            return contacts[i];
+          }
+        }
+      },
+      removeContact: function(contact){
+        for (var i=0; i < contacts.length; i++){
+          if (contacts[i] === contact){
+            contacts.splice(i, 1);
           }
         }
       },
       printAllContactNames: function(){
-        Object.entries.join(" ");
+        var namesArr = [];
+        for (var i=0; i < contacts.length; i++){
+          if (i !== contacts.length-1){
+             namesArr.push(contacts[i].nameFirst + " " + contacts[i].nameLast + "\n");
+          }else if (i === contacts.length-1){
+            namesArr.push(contacts[i].nameFirst + " " + contacts[i].nameLast);
+          }
+        } 
+        return namesArr.join("");
       }
   };
 
