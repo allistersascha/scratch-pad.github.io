@@ -244,7 +244,17 @@ function sortAscending(stringOne, stringTwo) {
   
   //loop thru both strings and compare the first letters until they differ and then that's the one?
   if (stringOne === stringTwo){
-    return 0;
+    return 0; 
+    }else for (let i=0; i<stringOne.length; i++){
+      if (stringOne.charCodeAt(i) > stringTwo.charCodeAt(i)){
+        return -1;
+      }else if (stringOne.charCodeAt(i) < stringTwo.charCodeAt(i)){
+        return 1;
+      }
+    }
+  }
+
+    /*
   }else if (stringOne.charCodeAt(0) < stringTwo.charCodeAt(0)){
     return 1;
   }else if (stringOne.charCodeAt(0) > stringTwo.charCodeAt(0)){
@@ -260,7 +270,7 @@ function sortAscending(stringOne, stringTwo) {
   }
   //^^ this works for these tests but i know could be written better
   // YOUR CODE ABOVE HERE //
-}
+} */
 
 /**
  * Given two Strings, return 1 if the first is lower in alphabetical order (meaning later in the alphabet) than
@@ -280,7 +290,16 @@ function sortDescending(stringOne, stringTwo) {
    //conditional statement comparing??
   // the codePointAt() i guess??
   if (stringOne === stringTwo){
-    return 0;
+    return 0; 
+    }else for (let i=0; i<stringOne.length; i++){
+      if (stringOne.charCodeAt(i) < stringTwo.charCodeAt(i)){
+        return -1;
+      }else if (stringOne.charCodeAt(i) > stringTwo.charCodeAt(i)){
+        return 1;
+      }
+    }
+  }
+   /*
   }else if (stringOne.charCodeAt(0) > stringTwo.charCodeAt(0)){
     return 1;
   }else if (stringOne.charCodeAt(0) < stringTwo.charCodeAt(0)){
@@ -295,7 +314,7 @@ function sortDescending(stringOne, stringTwo) {
     }
   }
   // YOUR CODE ABOVE HERE //
-}
+}*/
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if (
